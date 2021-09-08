@@ -33,10 +33,21 @@ router.get('/', function(req, res, next) {
 //   }
 // });
 
+router.get('/mosaic', async function(req, res, next) {
+  const input = '/users/skpark/downloads/test/dokev.mp4';
+  const output = '/users/skpark/downloads/test/make';
+
+  const result = await ffmpeg.makeHLS(input, output, 30);
+
+  console.log(result);
+
+  res.send(result);
+});
+
 
 /* test encoding */
 router.get('/hls', async function(req, res, next) {
-  const input = '/users/skpark/downloads/test/f.mp4';
+  const input = '/users/skpark/downloads/test/dokev.mp4';
   const output = '/users/skpark/downloads/test/make';
 
   const result = await ffmpeg.makeHLS(input, output, 30);

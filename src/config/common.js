@@ -5,7 +5,7 @@ dotenv.config();
 
 const config = {
   env: process.env.NODE_ENV,
-  port: process.env.PORT,
+  port: process.env.USE_PORT,
   mongoDB: {
     host: process.env.MONGODB_HOST,
     port: process.env.MONGODB_PORT,
